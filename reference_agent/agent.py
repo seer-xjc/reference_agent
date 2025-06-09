@@ -363,7 +363,7 @@ if __name__ == "__main__":
     parser.add_argument("--prompt", type=str, default="../reference_agent/prompts/agent_prompt")
     parser.add_argument("--doc", type=str, default="c:\\Users\\seer\\Desktop\\reference_agent\\data\\docs\\abb.pdf")
     parser.add_argument("--ref", type=str, default="../data/references")
-    parser.add_argument("--lightweight", action="store_true", default=True, help="使用轻量级模式，跳过PDF下载，仅使用arXiv元数据验证")
+    parser.add_argument("--lightweight", action="store_true", default=False, help="使用轻量级模式，跳过PDF下载，仅使用arXiv元数据验证")
     parser.add_argument("--skip-download", action="store_true", default=False, help="跳过PDF下载步骤")
     parser.add_argument("--skip-pdf-verify", action="store_true", default=False, help="跳过PDF验证步骤")
     args = parser.parse_args()
