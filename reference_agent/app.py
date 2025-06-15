@@ -634,15 +634,25 @@ if __name__ == "__main__":
     # 检查API key
     if not os.environ.get("ZHIPUAI_API_KEY"):
         print("❌ 错误: 请设置ZHIPUAI_API_KEY环境变量")
+        print("请在终端中运行以下命令设置API密钥：")
+        print("set ZHIPUAI_API_KEY=your_api_key_here")
+        print("或者创建.env文件并添加：ZHIPUAI_API_KEY=your_api_key_here")
         exit(1)
     
     # 启动界面
     demo = create_interface()
+    print("🚀 启动文献引用检查工具...")
+    print("📱 请在浏览器中访问以下地址：")
+    print("   http://localhost:7860")
+    print("   或 http://127.0.0.1:7860")
+    print("🔧 如果仍无法访问，请检查防火墙设置")
+    
     demo.launch(
-        server_name="0.0.0.0",
+        server_name="127.0.0.1",  # 改为localhost，更安全且兼容性更好
         server_port=7860,
         share=False,
-        show_error=True
+        show_error=True,
+        inbrowser=True  # 自动打开浏览器
     )
 
 
